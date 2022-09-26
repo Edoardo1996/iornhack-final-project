@@ -75,6 +75,7 @@ def format_data(data: pd.DataFrame) -> pd.DataFrame:
         Dataset formatted
     """
     # Format columns' names
+    data.columns = data.columns.str.rstrip()
     data.columns = data.columns.str.replace(' ', '_').str.lower()
     data.columns = data.columns.str.replace('#_', '')
     # Change index if unique
